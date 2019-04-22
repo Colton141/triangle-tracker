@@ -18,19 +18,24 @@ class Triangle
     string inputSideThree = Console.ReadLine();
     int sideThree = int.Parse(inputSideThree);
 
-    if (sideOne==sideTwo && sideTwo==sideThree)
+    if (sideOne <= (sideTwo + sideThree) && sideTwo <= (sideThree + sideOne) && sideThree <= (sideOne + sideTwo))
+
+    {
+       if (sideOne==sideTwo && sideTwo==sideThree)
       {
-         Console.WriteLine("equilateral");
-      } else if (sideOne==sideTwo || sideOne==sideThree || sideThree==sideTwo)
-      {
-        Console.WriteLine("isosceles");
-      } else if (sideOne <= (sideTwo + sideThree) && sideTwo <= (sideThree + sideOne) && sideThree <= (sideOne + sideTwo))
-      {
-        Console.WriteLine("not a triangle");
-      }
-       else
-      {
-        Console.WriteLine("scalene");
-      }
+        Console.WriteLine("equilateral");
+
+        } else if (sideOne==sideTwo || sideOne==sideThree || sideThree==sideTwo)
+        {
+          Console.WriteLine("isosceles");
+        }
+        else
+        {
+          Console.WriteLine("scalene");
+        }
+    } else {
+      Console.WriteLine("Not a triangle");
+    }
+
   }
 }
